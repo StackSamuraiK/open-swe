@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Open SWE — Open-Source AI Software Engineer
 
-## Getting Started
+Open SWE is an open-source AI coding agent built using **LangChain**, designed to automate software engineering workflows similar to proprietary agents like Devin.  
+It can plan, code, debug, and push changes — directly through GitHub or via a web interface.
 
-First, run the development server:
+---
 
+## 1. Concepts to Understand Before Using Open SWE
+
+Before setting up or running Open SWE, it’s important to understand the following theoretical concepts:
+
+### a. Large Language Models (LLMs)
+- LLMs like GPT, Claude, or Mixtral are core components of Open SWE.
+- They generate code, explanations, and plans based on user prompts.
+- Open SWE supports both open-weight (like Mistral, LLaMA) and API-based (like OpenAI or Anthropic) models.
+
+### b. LangChain
+- LangChain is a framework for building AI agents that can reason, plan, and take actions.
+- It connects LLMs with tools like file systems, APIs, and databases.
+- In Open SWE, LangChain powers the Planner and Programmer agents.
+
+### c. Agent Architecture
+- Open SWE uses a multi-agent system:
+  - **Planner Agent:** Analyzes issues or goals and breaks them into actionable tasks.
+  - **Programmer Agent:** Executes these tasks by writing or editing code.
+- The agents communicate using structured reasoning steps and maintain context through memory.
+
+### d. GitHub Integration
+- Open SWE is designed to work with GitHub repositories.
+- When an issue or pull request is labeled (e.g., `open-swe-auto`), the agent automatically starts processing it.
+- It can:
+  - Read repository code.
+  - Plan a solution.
+  - Generate commits.
+  - Open or update pull requests.
+
+### e. Workflow Automation
+- Open SWE automates software development workflows end-to-end:
+  - Issue analysis.
+  - Planning and execution.
+  - Code writing and debugging.
+  - Version control actions (commits, PRs).
+- Each step is logged and traceable in the web interface.
+
+### f. Vector Databases and Embeddings (Optional)
+- Open SWE can use vector databases to store and retrieve contextual information efficiently.
+- Embeddings convert text/code into numerical vectors that capture semantic meaning, allowing better long-term context handling.
+
+### g. Docker and Containerization
+- Open SWE uses Docker to ensure consistent environments for agents.
+- Each agent runs inside a containerized workspace to avoid dependency conflicts.
+
+### h. Environment Variables and API Keys
+- You’ll need API keys for the LLMs you choose (like OpenAI or Anthropic).
+- Proper environment configuration is required for GitHub access and LLM connectivity.
+
+### i. Frontend Interface
+- The web UI provides:
+  - Control over running agent sessions.
+  - Logs and intermediate reasoning steps.
+  - A visual workflow manager to observe the planning and coding process.
+
+---
+
+## 2. Core Features
+
+- Fully open-source autonomous software engineer.
+- GitHub integration for auto issue/PR handling.
+- Modular agent-based design (Planner and Programmer).
+- LangChain-powered reasoning and execution.
+- Optional vector memory for long-term context.
+- Web dashboard for management and monitoring.
+
+---
+
+## 3. How to Set Up Open SWE
+
+### Step 1: Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/ynixon/open-swe.git
+cd open-swe
