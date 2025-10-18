@@ -1,5 +1,13 @@
 # Open SWE — Open-Source AI Software Engineer
 
+## Heads up!!
+
+If anyone of you are reading this I need to clarify a few things I have never, I repeat never learned LangChain/LangGraph/Agentic AI. Though I have built many GPT Wrappers(cuz they are cool and awesome😎). I've finally decided to deep dive into it. This should take a but of time cuz I have to learn things from scratch. Once the base is all set up and I finally understand the flow I'll open a few issues and everyone will be free to take a part in it.
+
+- TL;DR
+I've never learn Langhain kinda thingy, since I am learning from scratch it'll take some time but we'll do it. Once the flow is finalised issues will be opened for participation.
+
+
 Open SWE is an open-source AI coding agent built using **LangChain**, designed to automate software engineering workflows similar to proprietary agents like Devin.  
 It can plan, code, debug, and push changes — directly through GitHub or via a web interface.
 
