@@ -79,3 +79,42 @@ Before setting up or running Open SWE, it’s important to understand the follow
 ```bash
 git clone https://github.com/ynixon/open-swe.git
 cd open-swe
+```
+### Step 2: Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+### Step 3: Configure Environment Variables
+```bash
+OPENAI_API_KEY=your_openai_key
+GITHUB_TOKEN=your_github_token
+```
+### Step 4: Run the Backend
+```bash
+python main.py
+```
+### Step 5: Run the Web Interface
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## 4. GitHub Integration Flow
+
+- Create or label an issue with a supported label (e.g., open-swe-auto).
+- The Open SWE backend detects the label and triggers the Planner agent.
+- The Planner generates a high-level plan and hands it to the Programmer.
+- The Programmer writes or edits code in the repository.
+- Commits are pushed automatically, and a pull request is created or updated.
+
+
+## 5. Tech Stack Overview
+
+- Backend: Python, LangChain, FastAPI
+- Frontend: React, Next.js
+- Database (optional): PostgreSQL or MongoDB for logs and vector data
+- LLM Providers: OpenAI, Anthropic, Mistral, or other supported models
+- Infrastructure: Docker, GitHub Actions
+
+## Thats's it for now as I'll add more things as I proceed!!
